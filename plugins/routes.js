@@ -7,7 +7,12 @@ module.exports = {
     name: 'routes',
     // register : 
     register: async (server) => {
-        awit server.register([])
+        await server.register([{
+            plugin: require('./_api'),
+            routes: {
+                prefix: '/api'
+            }
+        }]);
 
     }
 }

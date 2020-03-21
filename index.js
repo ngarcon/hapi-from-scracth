@@ -9,10 +9,11 @@ const Hapi = require('@hapi/hapi');
         host: 'localhost'
     });
 
+    await server.register(require('./plugins/routes'));
+
     await server.start(); 
     console.log("Server running on PORT", server.settings.port); 
-    console.table(server.settings); 
-    
+   
 })(); 
 
 
